@@ -1,0 +1,48 @@
+From ad4a1884786434f200dc4a200b31b1d85aca11d3 Mon Sep 17 00:00:00 2001
+From: Mat Booth <mat.booth@redhat.com>
+Date: Thu, 18 Jun 2020 15:23:18 +0100
+Subject: [PATCH] Fix runtime classpath and minimum BREE
+
+---
+ build.xml                           | 2 +-
+ org.sat4j.core/META-INF/MANIFEST.MF | 2 +-
+ org.sat4j.pb/META-INF/MANIFEST.MF   | 3 +--
+ 3 files changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/build.xml b/build.xml
+index 624f511..122ad12 100644
+--- a/build.xml
++++ b/build.xml
+@@ -324,7 +324,7 @@
+ 		<javac
+ 		srcdir="${src}"
+ 		destdir="${build}"
+-		source="1.5"
++		source="${source}"
+ 		target="${target}"
+ 		debug="true"
+ 	        includeantruntime="false">
+diff --git a/org.sat4j.core/META-INF/MANIFEST.MF b/org.sat4j.core/META-INF/MANIFEST.MF
+index e83a943..584326a 100644
+--- a/org.sat4j.core/META-INF/MANIFEST.MF
++++ b/org.sat4j.core/META-INF/MANIFEST.MF
+@@ -29,4 +29,4 @@ Specification-Vendor: Daniel Le Berre
+ Implementation-Title: SAT4J
+ Implementation-Version: 9.9.9.token 
+ Implementation-Vendor: CRIL CNRS UMR 8188 - Universite d'Artois
+-Bundle-RequiredExecutionEnvironment: J2SE-1.5
++Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+diff --git a/org.sat4j.pb/META-INF/MANIFEST.MF b/org.sat4j.pb/META-INF/MANIFEST.MF
+index f5ef127..10fe459 100644
+--- a/org.sat4j.pb/META-INF/MANIFEST.MF
++++ b/org.sat4j.pb/META-INF/MANIFEST.MF
+@@ -21,5 +21,4 @@ Specification-Vendor: Daniel Le Berre
+ Implementation-Title: SAT4J
+ Implementation-Version: 9.9.9.token 
+ Implementation-Vendor: CRIL CNRS UMR 8188 - Universite d'Artois
+-Class-Path: org.sat4j.core.jar
+-Bundle-RequiredExecutionEnvironment: J2SE-1.5
++Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+-- 
+2.26.2
+
